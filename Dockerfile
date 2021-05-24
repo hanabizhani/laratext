@@ -1,8 +1,10 @@
 FROM php:8.0.6-cli
 
+RUN apt-get clean
 RUN apt-get update
 RUN apt-get install -y tesseract-ocr
 RUN apt-get install -y tesseract-ocr-fas
+RUN apt-get install -y apache2 && apt-get clean
 RUN docker-php-ext-install pcntl
 
 RUN apt-get install -y zip libzip-dev
