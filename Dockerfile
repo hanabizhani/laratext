@@ -13,9 +13,17 @@ RUN docker-php-ext-install zip
 
 RUN curl -sS https://getcomposer.org/installer | php -- --version=2.0.9 --install-dir=/usr/local/bin --filename=composer
 
-WORKDIR /var/www/html
-COPY . /app/laratext
-WORKDIR /app/laratext
+
+#COPY . /app/laratext
+#WORKDIR /app/laratext
+
+# Copy application source
+COPY . /var/www/
+RUN chown -R www-data:www-data /var/www
+
+
+#laravel needs mode_rewrite to be enabled
+RUN a2enmod rewrite
 
 RUN composer install
 
