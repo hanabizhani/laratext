@@ -1,4 +1,5 @@
-FROM php:8.0.6-cli
+FROM php:8.0-apache
+
 
 RUN apt-get clean
 RUN apt-get update
@@ -12,6 +13,7 @@ RUN docker-php-ext-install zip
 
 RUN curl -sS https://getcomposer.org/installer | php -- --version=2.0.9 --install-dir=/usr/local/bin --filename=composer
 
+WORKDIR /var/www/html
 COPY . /app/laratext
 WORKDIR /app/laratext
 
