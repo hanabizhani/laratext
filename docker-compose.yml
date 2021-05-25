@@ -1,11 +1,11 @@
-version: "3.8"
+version: "3.7"
 services:
-  webapp:
-    image: hanabizhani/hblaratex
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    ports:
-      - "8000:80"
-    volumes:
-      - ./src:/var/www
+        web1:
+         image: hanabizhani/hblaratex
+        build:
+         context: .
+         dockerfile: ./Dockerfile
+       ports:
+        - "8000:80"
+       volumes:
+        - ./src:/var/www
