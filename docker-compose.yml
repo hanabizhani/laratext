@@ -1,11 +1,10 @@
-version: "3.7"
+version: '3.7'
 services:
-        web1:
-         image: hanabizhani/hblaratex
-        build:
-         context: .
-         dockerfile: ./Dockerfile
-       ports:
-        - "8000:80"
-       volumes:
-        - ./src:/var/www
+        myubuntu:         
+         build: .
+         container_name: myubuntuc
+         restart: always
+         ports:
+          - "8000:80"
+         volumes:
+          - ./src:/var/www
