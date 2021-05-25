@@ -25,7 +25,7 @@ RUN chown -R www-data:www-data /var/www
 #laravel needs mode_rewrite to be enabled
 RUN a2enmod rewrite
 
-WORKDIR /var/www/html/
+WORKDIR /var/www/
 
 #dynamically override Apache’s port
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
